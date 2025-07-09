@@ -3,10 +3,8 @@ const firebaseConfig = {
 };
 firebase.initializeApp(firebaseConfig);
 const db = firebase.database();
-
 // Set current year in footer
 document.getElementById('admin-year').textContent = new Date().getFullYear();
-
 function login() {
   const pass = document.getElementById("admin-pass").value;
   if (pass === "4321") {
