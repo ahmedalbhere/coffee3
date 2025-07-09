@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>لوحة التحكم - كافيه أونلاين</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container admin-container">
+    <header>
+      <h1><i class="fas fa-user-cog"></i> لوحة التحكم</h1>
+      <p>نظام إدارة المقهى</p>
+    </header>
+
+    <div id="login-section" class="card">
+      <h2><i class="fas fa-lock"></i> تسجيل الدخول</h2>
+      <div class="input-group">
+        <input type="password" id="admin-pass" placeholder="كلمة المرور">
+        <button onclick="login()" class="btn-primary">
+          <i class="fas fa-sign-in-alt"></i> دخول
+        </button>
+      </div>
+    </div>
+
+    <div id="admin-panel">
+      <div class="admin-section card">
+        <h2><i class="fas fa-clipboard-list"></i> الطلبات الجديدة</h2>
+        <div id="orders" class="orders-list"></div>
+      </div>
+
+      <div class="admin-section card">
+        <h2><i class="fas fa-utensils"></i> إدارة القائمة</h2>
+        <div class="input-group">
+          <input type="text" id="newItem" placeholder="اسم الصنف">
+          <input type="number" id="newPrice" placeholder="السعر بالجنيه">
+          <button onclick="addMenuItem()" class="btn-primary">
+            <i class="fas fa-plus"></i> إضافة
+          </button>
+        </div>
+        
+        <h3><i class="fas fa-list"></i> الأصناف الحالية</h3>
+        <div id="menu-list" class="menu-list"></div>
+      </div>
+    </div>
+
+    <footer>
+      <p>نظام إدارة كافيه أونلاين &copy; <span id="admin-year"></span></p>
+    </footer>
+  </div>
+
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-database-compat.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>
